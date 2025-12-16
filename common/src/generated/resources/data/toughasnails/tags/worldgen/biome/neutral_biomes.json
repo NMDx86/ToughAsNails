@@ -42,6 +42,8 @@
     "terralith:cave/granite_caves",
     "terralith:cave/tuff_caves",
     "terralith:cave/infested_caves",
-    "terralith:cave/crystal_caves"
+    "terralith:cave/crystal_caves",
+    "incendium:inverted_forest",
+    "incendium:weeping_valley"
   ]
 }
