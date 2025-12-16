@@ -30,6 +30,9 @@
     "terralith:red_oasis",
     "terralith:sandstone_valley",
     "terralith:warped_mesa",
-    "terralith:white_mesa"
+    "terralith:white_mesa",
+    "incendium:infernal_dunes",
+    "incendium:toxic_heap",
+    "incendium:volcanic_deltas"
   ]
 }
