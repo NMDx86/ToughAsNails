@@ -10,6 +10,19 @@
     "minecraft:savanna_plateau",
     "minecraft:windswept_savanna",
     "minecraft:warm_ocean",
-    "minecraft:mushroom_fields"
+    "minecraft:mushroom_fields",
+    "terralith:skylands_summer",
+    "terralith:warm_river",
+    "terralith:caldera",
+    "terralith:orchid_swamp",
+    "terralith:gravel_beach",
+    "terralith:amethyst_canyon",
+    "terralith:amethyst_rainforest",
+    "terralith:jungle_mountains",
+    "terralith:rocky_jungle",
+    "terralith:tropical_jungle",
+    "terralith:cave/underground_jungle",
+    "terralith:cave/fungal_caves",
+    "terralith:cave/thermal_caves"
   ]
 }
