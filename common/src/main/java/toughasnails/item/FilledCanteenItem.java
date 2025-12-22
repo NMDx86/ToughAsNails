@@ -39,9 +39,10 @@ public class FilledCanteenItem extends EmptyCanteenItem
         super(tier, properties);
     }
 
-    @Override
+@Override
     public void inventoryTick(ItemStack stack, ServerLevel level, Entity entity, @Nullable EquipmentSlot slot)
     {
+        // Basic checks: must be a player, must not already be purified, must have enchantments
         if (!(entity instanceof Player player) || stack.getItem() == getPurifiedWaterCanteen() || stack.getEnchantments().isEmpty())
             return;
 
@@ -50,8 +51,17 @@ public class FilledCanteenItem extends EmptyCanteenItem
         newStack.setDamageValue(stack.getDamageValue());
         stack.getEnchantments().entrySet().forEach(e -> newStack.enchant(e.getKey(), e.getIntValue()));
 
-        // Replace the current stack in the player's inventory
-        player.getInventory().setItem(slot.getIndex(), newStack);
+        // FIX: Find the exact slot index of THIS stack instance to prevent crash and duplication
+        Inventory inv = player.getInventory();
+        for (int i = 0; i < inv.getContainerSize(); i++)
+        {
+            // Check if the item in this slot is the exact same object as the one ticking
+            if (inv.getItem(i) == stack)
+            {
+                inv.setItem(i, newStack);
+                return; // Stop looking once we found and replaced it
+            }
+        }
     }
 
     @Override
