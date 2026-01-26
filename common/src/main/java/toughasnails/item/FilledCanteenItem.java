@@ -36,7 +36,8 @@ public class FilledCanteenItem extends EmptyCanteenItem
 
     public FilledCanteenItem(int tier, Properties properties)
     {
-        super(tier, properties);
+    // Add fireres to netherite
+    super(tier, tier == 5 ? properties.fireResistant() : properties);
     }
 
 @Override
