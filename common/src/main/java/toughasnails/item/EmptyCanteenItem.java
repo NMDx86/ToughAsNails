@@ -41,8 +41,9 @@ public class EmptyCanteenItem extends Item
 
     public EmptyCanteenItem(int tier, Properties properties)
     {
-        super(properties);
-        this.tier = tier;
+    // Apply fire resistance netherite
+    super(tier == 5 ? properties.fireResistant() : properties);
+    this.tier = tier;
     }
 
     @Override
